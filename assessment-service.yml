@@ -37,7 +37,7 @@ logging:
     console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n"
     
 server:
-  port: 9000
+  port: 8082
 
 # Management endpoints
 management:
