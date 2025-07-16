@@ -21,9 +21,23 @@ spring:
     init:
       mode: always
 
+# Common logging
 logging:
   level:
-    org.hibernate.sql: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.bytebites: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n"
+    
 server:
   port: 9000
+
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env
+  endpoint:
+    health:
+      show-details: always
