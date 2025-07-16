@@ -1,0 +1,16 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id:
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/auth/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${SPRING_EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+  instance:
+    prefer-ip-address: true
