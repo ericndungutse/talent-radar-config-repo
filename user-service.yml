@@ -19,10 +19,10 @@ spring:
       secret: ${JWT_SECRET}
       expirationMs: ${JWT_EXPIRATION_MS:86400000}
   mail:
-    host: ${MAIL_HOST:smtp.gmail.com}
-    port: ${MAIL_PORT:587}
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    host: ${SPRING_MAIL_HOST:smtp.gmail.com}
+    port: ${SPRING_MAIL_PORT:587}
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
     protocol: smtp
     properties:
       mail:
@@ -32,7 +32,7 @@ spring:
             enable: true
           ssl:
             trust: smtp.gmail.com
-        debug: true  # Helpful for troubleshooting
+        debug: true # Helpful for troubleshooting
 
 eureka:
   client:
@@ -45,6 +45,10 @@ app:
   base-url: ${APP_BASE_URL:http://localhost:4200}
   notification:
     email:
-      from: ${NOTIFICATION_EMAIL_FROM}
+      from: ${APP_NOTIFICATION_EMAIL_FROM}
       subject:
-        prefix: ${NOTIFICATION_EMAIL_SUBJECT_PREFIX}
+        prefix: ${APP_NOTIFICATION_EMAIL_SUBJECT_PREFIX}
+  registration:
+    token:
+      secret: ${APP_REGISTRATION_TOKEN_SECRET}
+      expiration-ms: ${APP_REGISTRATION_TOKEN_EXPIRATION_MS:86400000}
