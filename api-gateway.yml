@@ -22,6 +22,8 @@ spring:
           uri: lb://assessment-service
           predicates:
             - Path=/api/v1/assessments/**
+            - Path=/api/v1/feedbacks/**
+            - Path=/api/v1/dimensions/**
           filters:
             - StripPrefix=2
 
