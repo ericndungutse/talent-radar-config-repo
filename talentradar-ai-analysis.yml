@@ -1,0 +1,46 @@
+# Server Configuration
+server:
+  port: 3000
+
+# Application Configuration
+spring:
+  application:
+    name: talentradar-ai-analysis
+  profiles:
+    active: @profileActive@
+  
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:talentradar_ai_analysis}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+  
+  # JPA/Hibernate Configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  
+  # JWT Configuration
+  security:
+    jwt:
+      secret: ${JWT_SECRET:default-jwt-secret-change-me}
+      expiration-ms: 86400000  # 24 hours
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.talentradar: DEBUG
+  file:
+    name: logs/application.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
