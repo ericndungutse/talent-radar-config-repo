@@ -1,13 +1,11 @@
-# Server Configuration
 server:
-  port: 3000
+  port: 8700
 
 # Application Configuration
 spring:
   application:
     name: talentradar-ai-analysis
-  profiles:
-    active: @profileActive@
+ 
   
   # Database Configuration
   datasource:
