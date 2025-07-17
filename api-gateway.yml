@@ -16,12 +16,16 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/users/**
-            
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/roles/**
+
         # assessment Service Routes
         - id: assessment-service
           uri: lb://assessment-service
           predicates:
-            - Path=/api/v1/assessments/**,/api/v1/feedbacks/**,/api/v1/dimensions/**            
+            - Path=/api/v1/assessments/**,/api/v1/feedbacks/**,/api/v1/dimensions/**
           filters:
             - StripPrefix=2
 
