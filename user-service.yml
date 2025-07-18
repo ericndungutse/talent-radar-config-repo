@@ -7,6 +7,9 @@ spring:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: ${DB_DRIVER_CLASS_NAME}
+  kafka:
+    bootstrap-servers: localhost:9092
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -52,3 +55,6 @@ app:
     token:
       secret: ${APP_REGISTRATION_TOKEN_SECRET}
       expiration-ms: ${APP_REGISTRATION_TOKEN_EXPIRATION_MS:86400000}
+topic:
+  user-created: user-created
+  user-updated: user-updated
