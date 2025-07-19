@@ -28,8 +28,8 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
   instance:
-  prefer-ip-address: true
-  hostname: ${DB_HOSTNAME}
+    prefer-ip-address: true
+    hostname: ${DB_HOSTNAME}
 
 # Common logging
 logging:
