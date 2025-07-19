@@ -33,7 +33,10 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/roles/**
-
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/admin/sessions/**
         # assessment Service Routes
         - id: assessment-service
           uri: lb://assessment-service
