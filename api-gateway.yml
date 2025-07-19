@@ -49,4 +49,3 @@ eureka:
       defaultZone: ${SPRING_EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
   instance:
     prefer-ip-address: true
-    hostname: ${DB_HOSTNAME}
