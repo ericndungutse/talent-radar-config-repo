@@ -12,11 +12,11 @@ spring:
     properties:
       security.protocol: SSL
       ssl.keystore.type: PKCS12
-      ssl.keystore.location: classpath:certs/client.keystore.p12
+      ssl.keystore.location: classpath:certs/kafka-client.p12
       ssl.keystore.password: ${KAFKA_KEYSTORE_PASSWORD}
       ssl.key.password: ${KAFKA_KEY_PASSWORD}
       ssl.truststore.type: JKS
-      ssl.truststore.location: classpath:certs/client.truststore.jks
+      ssl.truststore.location: classpath:certs/truststore.jks
       ssl.truststore.password: ${KAFKA_TRUSTSTORE_PASSWORD}
       ssl.endpoint.identification.algorithm: http
 
