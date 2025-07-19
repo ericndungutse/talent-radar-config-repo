@@ -11,8 +11,7 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins:
-              - http://localhost:3001
-              - http://rnhkd-102-22-146-226.a.free.pinggy.link
+              - http://localhost:3000
             allowedMethods:
               - GET
               - POST
