@@ -10,13 +10,16 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_SERVER}
     consumer:
-      group-id: feedback-service
+      group-id: assessment-service
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    admin:
+      properties:
+        default.replication.factor: 1
 
 eureka:
   client:
