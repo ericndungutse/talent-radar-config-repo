@@ -47,6 +47,11 @@ spring:
           uri: lb://notification-service
           predicates:
             - Path=/api/v1/notifications/**
+        # AI Analysis Service Routes
+        - id: ai-analysis-service
+          uri: lb://talentradar-ai-analysis-service
+          predicates:
+            - Path=/api/ai-analysis/**
 
 eureka:
   client:
