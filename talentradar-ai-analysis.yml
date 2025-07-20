@@ -34,7 +34,15 @@ spring:
       secret: ${JWT_SECRET:default-jwt-secret-change-me}
       expiration-ms: 86400000  # 24 hours
 
-# Logging Configuration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${SPRING_EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+  instance:
+    prefer-ip-address: true
+
+
+
 logging:
   level:
     root: INFO
