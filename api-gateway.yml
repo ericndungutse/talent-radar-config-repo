@@ -42,6 +42,11 @@ spring:
           uri: lb://assessment-service
           predicates:
             - Path=/api/v1/assessments/**,/api/v1/feedbacks/**,/api/v1/dimensions/**
+        # notification Service Routes
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/v1/notifications/**
 
 eureka:
   client:
