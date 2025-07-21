@@ -12,6 +12,7 @@ spring:
           '[/**]':
             allowedOrigins:
               - http://localhost:3000
+              - https://talentradar-frontend-project-rw.vercel.app
             allowedMethods:
               - GET
               - POST
