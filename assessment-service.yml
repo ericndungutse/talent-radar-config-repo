@@ -29,7 +29,7 @@ eureka:
     register-with-eureka: true
   instance:
     prefer-ip-address: true
-    hostname: ${DB_HOSTNAME}
+    # hostname: ${DB_HOSTNAME}
 
 # Common logging
 logging:
