@@ -15,7 +15,7 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
     properties:
-      spring.json.value.default.type: com.talentradar.talentradarnotificationservicerw.domain.events
+      spring.json.type.mapping: assessment:com.talentradar.talentradarnotificationservicerw.domain.events.AssessmentEvent,feedback:com.talentradar.talentradarnotificationservicerw.domain.events.FeedbackEvent
     producer:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
