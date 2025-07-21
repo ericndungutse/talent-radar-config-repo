@@ -7,14 +7,14 @@ spring:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: ${DB_DRIVER_CLASS_NAME}
-    
+
   session:
     store-type: redis
     timeout: 30m
-  data:
-    redis:
-      host: ${REDIS_HOSTNAME}
-      port: ${REDIS_PORT}  
+  redis:
+    host: ${REDIS_HOSTNAME}
+    port: ${REDIS_PORT}
+    password: ${REDIS_PASSWORD}
 
   kafka:
     bootstrap-servers: talent-radar-kafka-server-demo-hib.j.aivencloud.com:24032

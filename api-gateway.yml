@@ -1,6 +1,15 @@
 server:
   port: ${SERVER_PORT}
 spring:
+  data:
+    redis:
+      host: ${REDIS_HOSTNAME}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+  redis:
+    host: ${REDIS_HOSTNAME}
+    port: ${REDIS_PORT}
+    password: ${REDIS_PASSWORD}
   security:
     jwt:
       secret: ${JWT_SECRET}
@@ -13,6 +22,7 @@ spring:
             allowedOrigins:
               - http://localhost:3000
               - https://talentradar-frontend-project-rw.vercel.app
+              - https://talentradar-frontend-proj-git-ee52f0-muhirwas-projects-2023eaf6.vercel.app
             allowedMethods:
               - GET
               - POST
@@ -54,15 +64,9 @@ spring:
           uri: lb://talentradar-ai-analysis
           predicates:
             - Path=/api/ai-analysis/**
-  data:
-    redis:
-      host: ${REDIS_HOSTNAME}
-      port: ${REDIS_PORT}
-
 eureka:
   client:
     serviceUrl:
       defaultZone: ${SPRING_EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
   instance:
     prefer-ip-address: true
-    hostname: ${HOSTNAME}
