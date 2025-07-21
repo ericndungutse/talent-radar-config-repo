@@ -19,6 +19,9 @@ spring:
           json:
             trusted.packages: "*"
             use.type.headers: false
+            type.mapping: >
+              assessment:com.talentradar.talentradarnotificationservicerw.domain.events.AssessmentEvent,
+              feedback:com.talentradar.talentradarnotificationservicerw.domain.events.FeedbackEvent
     producer:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
