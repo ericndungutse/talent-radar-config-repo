@@ -17,6 +17,7 @@ spring:
               - POST
               - PUT
               - DELETE
+              - PATCH
               - OPTIONS
             allowedHeaders: '*'
             allowCredentials: true
@@ -55,7 +56,7 @@ spring:
   data:
     redis:
       host: ${REDIS_HOSTNAME}
-      port: ${REDIS_PORT}            
+      port: ${REDIS_PORT}
 
 eureka:
   client:
