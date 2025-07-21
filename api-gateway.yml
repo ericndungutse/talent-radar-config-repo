@@ -52,6 +52,10 @@ spring:
           uri: lb://talentradar-ai-analysis
           predicates:
             - Path=/api/ai-analysis/**
+  data:
+    redis:
+      host: ${REDIS_HOSTNAME}
+      port: ${REDIS_PORT}            
 
 eureka:
   client:
