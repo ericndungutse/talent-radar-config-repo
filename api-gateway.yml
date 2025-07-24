@@ -58,7 +58,13 @@ spring:
         - id: notification-service
           uri: lb://notification-service
           predicates:
-            - Path=/api/v1/notifications/**
+            - Path=/api/v1/notifications/**,/ws-notifications/**
+          filters:
+            - name: RewritePath
+              args:
+                regexp: "/ws-notifications/(?<segment>.*)"
+                replacement: "/ws-notifications/${segment}"
+                
         # AI Analysis Service Routes
         - id: ai-analysis-service
           uri: lb://talentradar-ai-analysis
