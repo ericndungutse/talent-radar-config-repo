@@ -23,6 +23,7 @@ spring:
               - http://localhost:3000
               - https://talentradar-frontend-project-rw.vercel.app
               - https://talentradar-frontend-proj-git-ee52f0-muhirwas-projects-2023eaf6.vercel.app
+              - http://localhost:63644
             allowedMethods:
               - GET
               - POST
