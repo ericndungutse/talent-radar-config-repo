@@ -3,8 +3,8 @@ server:
 spring:
   data:
     redis:
-      host: 3.248.193.123
-      port: 6379
+      host: ${REDIS_HOSTNAME}
+      port: ${REDIS_PORT}
       
   
   security:
