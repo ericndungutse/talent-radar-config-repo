@@ -7,21 +7,26 @@ spring:
   data:
     mongodb:
       uri: ${MONGO_DB_URL}
-  kafka:
-    bootstrap-servers: ${KAFKA_SERVER}
-    consumer:
-      group-id: assessment-service
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-    properties:
-      spring.json.value.default.type: com.talentradar.talentradarnotificationservicerw.domain.events.AssessmentEvent
-    producer:
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-    admin:
-      properties:
-        default.replication.factor: 1
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    virtual-host: ${RABBITMQ_VIRTUAL_HOST:/}
+    connection-timeout: 60000
+    # Publisher confirms for reliability
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    # Consumer settings
+    listener:
+      simple:
+        acknowledge-mode: manual
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1000
+          multiplier: 2
+        default-requeue-rejected: false    
 
 eureka:
   client:
