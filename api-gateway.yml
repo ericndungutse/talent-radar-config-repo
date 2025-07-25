@@ -7,23 +7,23 @@ spring:
       expiration: ${JWT_EXPIRATION_MS}
   cloud:
     gateway:
-      # globalcors:
-      #   corsConfigurations:
-      #     '[/**]':
-      #       allowedOrigins:
-      #         - http://localhost:3000
-      #         - https://talentradar-frontend-project-rw.vercel.app
-      #         - https://talentradar-frontend-proj-git-ee52f0-muhirwas-projects-2023eaf6.vercel.app
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - http://localhost:3000
+              - https://talentradar-frontend-project-rw.vercel.app
+              - https://talentradar-frontend-proj-git-ee52f0-muhirwas-projects-2023eaf6.vercel.app
               
-      #       allowedMethods:
-      #         - GET
-      #         - POST
-      #         - PUT
-      #         - DELETE
-      #         - PATCH
-      #         - OPTIONS
-      #       allowedHeaders: '*'
-      #       allowCredentials: true
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+              - OPTIONS
+            allowedHeaders: '*'
+            allowCredentials: true
       routes:
         - id: user-service
           uri: lb://user-service
