@@ -11,7 +11,7 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins:
-              - http://localhost:3000
+              - http://localhost:*
               - https://talentradar-frontend-project-rw.vercel.app
               - https://talentradar-frontend-proj-git-ee52f0-muhirwas-projects-2023eaf6.vercel.app
               
