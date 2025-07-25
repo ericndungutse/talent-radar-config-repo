@@ -2,6 +2,10 @@ server:
   port: ${SERVER_PORT:3000}
 
 spring:
+  data:
+    redis:
+      host: 3.248.193.123
+      port: 6379
   datasource:
     url: ${DB_URL}
     username: ${DB_USERNAME}
@@ -11,10 +15,6 @@ spring:
   session:
     store-type: redis
     timeout: 30m
-  data:
-    redis:
-      host: 3.248.193.123
-      port: 6379
 
   kafka:
     bootstrap-servers: talent-radar-kafka-server-demo-hib.j.aivencloud.com:24032
