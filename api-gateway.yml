@@ -3,10 +3,10 @@ server:
 spring:
   data:
     redis:
-      host: 3.248.193.123
-      port: 6379
-      
-  
+      data:
+        host: ${SPRING_DATA_REDIS_HOSTNAME}
+        port: ${SPRING_DATA_REDIS_PORT}
+        password: ${SPRING_DATA_REDIS_PASSWORD}
   security:
     jwt:
       secret: ${JWT_SECRET}
