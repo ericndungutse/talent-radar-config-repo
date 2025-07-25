@@ -1,12 +1,6 @@
 server:
   port: ${SERVER_PORT}
 spring:
-  data:
-    redis:
-      data:
-        host: ${SPRING_DATA_REDIS_HOSTNAME}
-        port: ${SPRING_DATA_REDIS_PORT}
-        password: ${SPRING_DATA_REDIS_PASSWORD}
   security:
     jwt:
       secret: ${JWT_SECRET}
