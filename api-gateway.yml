@@ -62,6 +62,16 @@ spring:
           uri: lb://talentradar-ai-analysis
           predicates:
             - Path=/api/ai-analysis/**
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env
+  endpoint:
+    health:
+      show-details: always
+      
 eureka:
   client:
     serviceUrl:
